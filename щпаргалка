@@ -1,0 +1,53 @@
+меню
+local Library = loadstring(game:HttpGet("https://pastebin.com/raw/8mibEsNJ"))()
+окно
+local Window = Library.CreateLib("GootHub", "Candy")
+таб
+local Tab = Window:NewTab("Main")
+секция
+local SectionESP = Tab:NewSection("ESP")
+кнопка
+Section:NewButton("Текст кнопки", "Описание при наведении", function()
+    print("Кнопка нажата")
+end)
+переключатель
+Section:NewToggle("Auto Farm", "Включает автоматический фарм", function(state)
+    if state then
+        print("Включено")
+    else
+        print("Выключено")
+    end
+end, "autoFarm")   -- ключ для сохранения
+слайдер
+Section:NewSlider("Скорость", "Максимум 500, минимум 0", 500, 0, function(value)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
+end, "walkSpeed")   -- ключ для сохранения
+текстовое поле
+Section:NewTextBox("Введите команду", "Нажмите Enter", function(text)
+    print("Введено: " .. text)
+end)
+бинд на клавиши
+Section:NewKeybind("Открыть меню", "Назначьте клавишу", Enum.KeyCode.F, function(key)
+    print("Нажата клавиша: " .. key.Name)
+end, "menuKeybind")   -- ключ для сохранения
+телепорт к игрокам
+Section:NewPlayerList("Текст", "Инфо", function(player)
+    print("Телепорт к", player.Name)
+end)
+
+все темы 
+Dark
+Light
+Ocean
+Sunset
+Mint
+Arctic
+Fire
+Forest
+Galaxy
+Neon
+Crimson
+Emerald
+Sapphire
+Twilight
+Candy
