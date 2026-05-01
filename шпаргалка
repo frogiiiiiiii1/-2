@@ -5,7 +5,7 @@ local Window = Library.CreateLib("GootHub", "Candy")
 таб
 local Tab = Window:NewTab("Main")
 секция
-local SectionESP = Tab:NewSection("ESP")
+local Section = Tab:NewSection("Esp")
 кнопка
 Section:NewButton("Текст кнопки", "Описание при наведении", function()
     print("Кнопка нажата")
