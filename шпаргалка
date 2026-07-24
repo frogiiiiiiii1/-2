@@ -1,35 +1,44 @@
-меню
+меню сыллка на библиотеку
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/zMYEA4yE"))()
-окно
+
+создание самого окна
 local Window = Library.CreateLib("GootHub", "Candy")
-таб
+
+создание таба
 local Tab = Window:NewTab("Main")
-секция
+
+создание секции
 local Section = Tab:NewSection("Esp")
-кнопка
+
+создание кнопки
 Section:NewButton("Текст кнопки", "Описание при наведении", function()
     print("Кнопка нажата")
 end)
-переключатель
+
+создание переключателя переключатель
 Section:NewToggle("Auto Farm", "Включает автоматический фарм", function(state)
     if state then
         print("Включено")
     else
         print("Выключено")
     end
-end, "autoFarm")   -- ключ для сохранения
-слайдер
+end)
+
+создание слайдера
 Section:NewSlider("Скорость", "Максимум 500, минимум 0", 500, 0, function(value)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
-end, "walkSpeed")   -- ключ для сохранения
+end)
+
 текстовое поле
 Section:NewTextBox("Введите команду", "Нажмите Enter", function(text)
     print("Введено: " .. text)
 end)
+
 бинд на клавиши
 Section:NewKeybind("Открыть меню", "Назначьте клавишу", Enum.KeyCode.F, function(key)
     print("Нажата клавиша: " .. key.Name)
-end, "menuKeybind")   -- ключ для сохранения
+end) 
+
 телепорт к игрокам
 Section:NewPlayerList("Текст", "Инфо", function(player)
     print("Телепорт к", player.Name)
